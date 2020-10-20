@@ -46,7 +46,7 @@ function runBabel(name, {copyFiles, outDir, src, extensions, configFileName}, bu
     args.push('--config-file', path.resolve(configFileName))
   }
 
-  fs.writeFile('.babelrc', JSON.stringify(babelConfig, null, 2), (err) => {
+  fs.writeFile(configFileName, JSON.stringify(babelConfig, null, 2), (err) => {
     if (err) return cb(err)
     let spinner = ora(`Creating ${name} build`).start()
     let babel = spawn(require.resolve('.bin/babel'), args, {stdio: 'inherit'})
