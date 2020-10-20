@@ -1,7 +1,13 @@
+# 0.27.0 / 2020-10-20
+- Don't fail building when there is .babelrc file. Instead, use .babelrc.build for the temporary config.
+
+  [Babel CLI](https://babeljs.io/docs/en/babel-cli#custom-config-path) allows for `--config-file` option with which you can specify your own config file. Thanks to that, if there is already .babelrc file in the repo, the build can still continue instead of being stopped.
+
 # 0.26.0 / 2020-10-20
 ## Fixes
 - Allow to specify Babel CLI extensions argument. This makes it possible to compile Typescript components.
 
+# MISSING
 ## Dependencies
 
 - @babel/cli: v7.8.4 → [v7.10.3](https://github.com/babel/babel/blob/master/CHANGELOG.md#v7102-2020-05-30)
